@@ -1,0 +1,22 @@
+{% include 'header.html' %}
+
+<div class="text">
+<form class="mx-auto" action="{{ url_for('email', msg = text) }}" method="POST">
+    <img class="mb-4" src="/static/images/email-icon-115.png" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Input your e-mail</h1>
+    <div class="form-floating">
+      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <button class="btn btn-primary w-100 py-2" type="submit">Send</button>
+  </form>
+</div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p class="flash">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+{% include 'footer.html' %}

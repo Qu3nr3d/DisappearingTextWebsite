@@ -1,0 +1,12 @@
+{% include 'header.html' %}
+
+
+<div class="text col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">Your text</h3>
+          <p class="mb-auto">{{ text }}</p>
+                  <a href="{{ url_for('email', msg=text) }}" class="btn btn-primary btn-lg px-4 gap-3" role="button">
+                      Send it to your email?</a>
+        </div>
+
+
+{% include 'footer.html' %}
